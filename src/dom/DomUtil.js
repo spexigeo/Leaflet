@@ -226,6 +226,7 @@ export function setTransform(el, offset, scale) {
 // (used by Leaflet internally to position its layers).
 export function setPosition(el, point) {
 
+	if (!el) return;
 	/*eslint-disable */
 	el._leaflet_pos = point;
 	/* eslint-enable */
@@ -246,6 +247,7 @@ export function getPosition(el) {
 	if (!el) {
 		return new Point(0,0);
 	}
+
 	return el._leaflet_pos || new Point(0, 0);
 }
 

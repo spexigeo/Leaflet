@@ -1,5 +1,5 @@
 /* @preserve
- * Leaflet 1.7.1+master.5cd692c, a JS library for interactive maps. http://leafletjs.com
+ * Leaflet 1.7.1+master.a1a4895, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2021 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
@@ -2423,6 +2423,7 @@ function setTransform(el, offset, scale) {
 // (used by Leaflet internally to position its layers).
 function setPosition(el, point) {
 
+	if (!el) return;
 	/*eslint-disable */
 	el._leaflet_pos = point;
 	/* eslint-enable */
@@ -2443,6 +2444,7 @@ function getPosition(el) {
 	if (!el) {
 		return new Point(0,0);
 	}
+
 	return el._leaflet_pos || new Point(0, 0);
 }
 
