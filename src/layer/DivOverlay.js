@@ -205,7 +205,8 @@ export var DivOverlay = Layer.extend({
 			while (node.hasChildNodes()) {
 				node.removeChild(node.firstChild);
 			}
-			node.appendChild(content);
+
+			if (typeof node === 'object') node.appendChild(content);
 		}
 		this.fire('contentupdate');
 	},
