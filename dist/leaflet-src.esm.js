@@ -1,9 +1,9 @@
 /* @preserve
- * Leaflet 1.7.1+master.a1a4895, a JS library for interactive maps. http://leafletjs.com
+ * Leaflet 1.7.1+master.79903bc, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2021 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
-var version = "1.7.1+master.0f904a51";
+var version = "1.7.1+master.0e6adcbb";
 
 /*
  * @namespace Util
@@ -9618,7 +9618,8 @@ var DivOverlay = Layer.extend({
 			while (node.hasChildNodes()) {
 				node.removeChild(node.firstChild);
 			}
-			node.appendChild(content);
+
+			if (typeof node === 'object') node.appendChild(content);
 		}
 		this.fire('contentupdate');
 	},
